@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-05</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="<link rel=" stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8FAFC] ">
+
+    <header class="w-[520px] mx-auto min-h-screen flex justify-center items-center">
+       <div class="w-full  bg-white drop-shadow-xl p-8 rounded-lg" >
+         <div
+            class="login-banner  w-11/12 mx-auto flex flex-col justify-center items-center gap-6">
+            <div class="github-logo">
+                <img src="./assets/github-logo.png" alt="">
+            </div>
+            <div class="logo-banner-text text-center">
+                <h1 class="font-semibold text-2xl text-[#1F2937]">GitHub Issues Tracker</h1>
+                <p class="text-[#64748B]">Sign in to manage your issues</p>
+            </div>
+        </div>
+
+        <!-- login-form -->
+        <div class="login-form  mx-auto my-6 ">
+            <fieldset class="fieldset rounded-box  p-4 w-full">
+
+                <label class="label text-[#1F2937] font-medium text-[16px]">Username</label>
+                <input type="email" class="input w-full rounded-lg " placeholder="Enter Username" />
+                   <p class="text-[#4A00FF]">Default: admin</p>
+                <label class="label text-[#1F2937] font-medium text-[16px]">Password</label>
+                <input type="password" class="input w-full rounded-lg" placeholder="Enter Password" />
+                    <p class="text-[#4A00FF]">Default: admin123</p>
+                <button class="btn bg-[#4A00FF] mt-4 text-white rounded-lg">Sign In</button>
+            </fieldset>
+        </div>
+        <div class="login-divider ">
+                <div class="divider w-11/12 mx-auto text-[#1F2937] ">OR</div>
+        </div>
+        <div class="demo-box w-11/12 m-auto text-center">
+            <h3 class="text-[#64748B] text-[14px] mb-2">Demo Credentials:</h3>
+            <div class="user-box bg-[#F8FAFC] p-6">
+                <h3 class="text-[#1F2937]"><span class="font-semibold text-[16px]">Username:</span>admin</h3>
+                <h3><span class="font-semibold text-16px">Password:</span>admin123</h3>
+            </div>
+        </div>
+       </div>
+    </header>
+
+    <script src="./script/login.js"></script>
+</body>
+
+</html>
