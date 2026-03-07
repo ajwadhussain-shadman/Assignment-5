@@ -23,7 +23,7 @@
 
 <body class="bg-slate-50 min-h-screen">
     <!-- navbar -->
-    <div class="navbar bg-[#FFFFFF] py-4 px-20 flex justify-between w-full shadow-md ">
+    <div class="navbar bg-[#FFFFFF] py-4 px-20 flex  justify-between w-full shadow-md ">
         <div class="navbar-logo flex items-center gap-2 ">
             <img src="./assets/github-logo.png" alt="" class="w-9 h-9">
             <h1 class="font-semibold text-2xl text-[#1F2937]">GitHub Issues Tracker</h1>
@@ -63,7 +63,7 @@
                     <img src="./assets/Aperture.png" alt="">
                 </div>
                 <div>
-                    <h2 class="text-[#1F2937] font-semibold text-xl">50 Issues</h2>
+                    <h2 class="text-[#1F2937] font-semibold text-xl"><span id="issueNumber">50</span>Issues</h2>
                     <p class="text-[#64748B]">Track and manage your project issues</p>
                 </div>
             </div>
@@ -81,51 +81,9 @@
         </div>
 
         <!--cards section  -->
-        <div class="cards-container p-6 bg-[#FBFBFB] grid grid-cols-4 gap-3">
+        <div id="issueCardSection" class="cards-container p-6 bg-[#FBFBFB] grid grid-cols-4 gap-3">
             <!-- card -->
-            <div
-                class="card w-[256px]  shadow-md bg-[#ffffff] rounded-lg border-t-4 border-[#00A96E]  ">
-                      
-                 <div class="uppersection p-6 space-y-3">
-                           <!-- card top -->
-                <div class="card-top flex justify-between">
-                    <!-- left icon -->
-                    <div class="left-icon">
-                        <img src="./assets/Open-Status.png" alt="">
-                    </div>
-                    <!-- priority badge -->
-                    <div class="priority-badge bg-[#FEECEC] rounded-[100px] w-20 flex justify-center items-center">
-                        <p class="text-[#EF4444] text-[12px]">HIGH</p>
-                    </div>
-                </div>
-                <!-- card-content -->
-                <div class="card-content">
-                    <h2 class="card-title text-[#1F2937] font-semibold text-[14px]">Fix navigation menu on mobile
-                        devices</h2>
-                    <p class="card-description text-[#64748B] text-[12px]">The navigation menu doesn't collapse properly
-                        on mobile devices...</p>
-                </div>
-                <!-- card label -->
-                <div class="labels flex gap-1">
-                    <div
-                        class="label-1 flex  items-center bg-[#FEECEC] border border-[#FECACA] rounded-[100px] w-14 justify-center gap-0.5">
-                        <img src="./assets/BugDroid.png" alt="" class="">
-                        <p class="text-[#EF4444] text-[12px] font-medium">Bug</p>
-                    </div>
-                    <div
-                        class="label-2 flex  items-center bg-[#FFF8DB] border border-[#FDE68A] rounded-[100px] w-28 justify-center gap-0.5">
-                        <img src="./assets/Lifebuoy.png" alt="" class="">
-                        <p class="text-[#D97706] text-[12px] font-medium">HELP WANTED</p>
-                    </div>
-                </div>
-                 </div>
-                <!-- bottomsection-->
-                <div class="border-t p-4 text-[#64748B] border-[#E4E4E7]">
-                    <p>#1 by john_doe</p>
-                    <p>1/15/2024</p>
-                </div>
-            </div>
-        </div>
+           
     </div>
 
     </div>
