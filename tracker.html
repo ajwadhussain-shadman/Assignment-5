@@ -23,10 +23,10 @@
 
 <body class="bg-slate-50 min-h-screen">
     <!-- navbar -->
-    <div class="navbar bg-[#FFFFFF] py-4 px-20 flex  justify-between w-full shadow-md sticky top-0 z-50 ">
+    <div class="navbar bg-[#FFFFFF] py-4 px-4 md:px-20 flex  justify-between w-full shadow-md sticky top-0 z-50 ">
         <div class="navbar-logo flex items-center gap-2 ">
             <img src="./assets/github-logo.png" alt="" class="w-9 h-9">
-            <h1 class="font-semibold text-2xl text-[#1F2937]">GitHub Issues Tracker</h1>
+            <h1 class="font-semibold text-lg md:text-2xl text-[#1F2937]">GitHub Issues Tracker</h1>
         </div>
         <div class="navbar-search flex gap-2">
             <label class="input">
@@ -44,7 +44,7 @@
         </div>
     </div>
     <!-- main-section -->
-    <div class="main-section w-[70%] mx-auto pt-14">
+    <div class="main-section w-[90%] md:w-[70%] mx-auto pt-14">
 
         <!-- button section -->
         <div class="buttons bg-[#FFFFFF]  mx-auto flex gap-2 p-6 drop-shadow-xl rounded-lg">
@@ -81,12 +81,54 @@
         </div>
 
         <!--cards section  -->
-        <div id="issueCardSection" class="cards-container p-6 bg-[#FBFBFB] grid grid-cols-4 gap-3">
+        <div id="issueCardSection" class="cards-container p-6 bg-[#FBFBFB] grid grid-cols-1  lg:grid-cols-2  xl:grid-cols-3 2xl:grid-cols-4 gap-3 justify-items-center">
             <!-- card -->
            
     </div>
 
     </div>
+    
+    <!-- Modal Box -->
+     <dialog id="issueModal" class="modal">
+  <div class="bg-white rounded-xl p-8 shadow-xl  w-[85%] md:w-[60%] lg:w-[40%]">
+    <h3 id="modalTitle" class="text-3xl font-bold text-[#1F2937]">Fix broken image uploads</h3>
+
+    <div class="flex items-center gap-2 mt-3 text-[#64748B] text-[12px]">
+      <p class=" badge rounded-full bg-[#00A96E] text-white">Opened</p>
+      <span>•</span>
+      <p ">Opened by Fahim Ahmed</p>
+      <span>•</span>
+      <span>22/02/2026</span>
+    </div>
+
+    <div id="modalLabels" class="flex gap-2 mt-4">
+      <!-- for label -->
+    </div>
+
+    <p id="modalDescription" class="py-6 text-[#64748B]">
+      The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+
+    <div class="bg-base-200 p-5 rounded-lg flex  gap-[150px] lg:gap-[200px]">
+      <div>
+        <p class="text-gray-500">Assignee:</p>
+        <p id="modalAssignee" class="font-semibold">Fahim Ahmed</p>
+      </div>
+
+      <div>
+        <p class="text-[#64748B] mb-2">Priority:</p>
+        <span id="modalPriority" class="badge bg-[#EF4444] text-white">HIGH</span>
+      </div>
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn bg-[#4A00FF]  text-white focus:outline-none">Close</button>
+      </form>
+    </div>
+
+  </div>
+</dialog>
+
     <script src="./script/login.js"></script>
     <script src="./script/tracker.js"></script>
 </body>
