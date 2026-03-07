@@ -35,6 +35,20 @@ function displayIssues(issues) {
     issueCardSection.innerHTML = "";
     issues.forEach(issue => {
         let statusIcon = "";
+        let priorityBgColor="";
+        let priorityTextColor="";
+        if(issue.priority==="high"){
+           priorityBgColor="bg-[#FEECEC]";
+           priorityTextColor="text-[#EF4444]";
+        }
+        else if(issue.priority==="medium"){
+            priorityBgColor="bg-[#FFF6D1]";
+           priorityTextColor="text-[#F59E0B]";
+        }
+        else {
+             priorityBgColor="bg-[#EEEFF2]";
+           priorityTextColor="text-[#9CA3AF]";
+        }
             
         issue.status === "open" ?statusIcon = "./assets/Open-Status.png" : statusIcon ="./assets/Closed-Status.png";
         
@@ -102,8 +116,8 @@ function displayIssues(issues) {
                         <img src=${statusIcon} alt="">
                     </div>
                     <!-- priority badge -->
-                    <div class="priority-badge bg-[#FEECEC] rounded-[100px] w-20 flex justify-center items-center">
-                        <p class="text-[#EF4444] text-[12px]">${issue.priority}</p>
+                    <div class="priority-badge ${priorityBgColor} rounded-[100px] w-20 flex justify-center items-center">
+                        <p class="${priorityTextColor} text-[12px]">${issue.priority}</p>
                     </div>
                 </div>
                 
