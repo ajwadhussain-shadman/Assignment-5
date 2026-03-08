@@ -9,10 +9,16 @@ const modalAssignee = document.getElementById("modalAssignee");
 const modalPriority = document.getElementById("modalPriority");
 let issueNumber = document.getElementById("issueNumber");
 const issueModal=document.getElementById("issueModal");
+const modalOpenBy=document.getElementById("modalOpenBy");
+const modalOpenDate=document.getElementById("modalOpenDate");
+const loadingSpinner=document.getElementById("loadingSpinner");
+const searchBox=document.getElementById("searchBox");
 const states = [allBtn, openBtn, closedBtn];
 let cState = allBtn;
+
 function currentState(id) {
     cState = id;
+    showLoadingSpinner();
     loadIssues();
     allBtn.classList.remove("btn-primary");
 
@@ -27,13 +33,13 @@ function currentState(id) {
             state.classList.add("hover:bg-black", "hover:text-white");
         }
     }
-
 }
 currentState(allBtn);
 
 async function loadIssues() {
     const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
     const data = await res.json();
+     hideLoadingSpinner();
     displayIssues(data.data);
 }
 function displayIssues(issues) {
@@ -107,22 +113,28 @@ function displayIssues(issues) {
         
         `
         issueCardSection.appendChild(issueCard);
-        issueNumber.innerText = issueCardSection.children.length;
+        
         issueCard.addEventListener("click",()=>{
             showIssueModal(issue.id);
         })
     })
+    issueNumber.innerText = issueCardSection.children.length;
 }
 
 async function showIssueModal(id) {
+    showLoadingSpinner();
     const res=await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`);
     const data=await res.json();
     // console.log(data);
     const issue=data.data;
+    hideLoadingSpinner();
     modalTitle.innerText=issue.title;
     modalDescription.innerText=issue.description;
-    modalAssignee.innerText=issue.assignee;
+    modalAssignee.innerText=(issue.assignee!=="") ?issue.assignee:"not found";
     modalPriority.innerText=issue.priority;
+    modalOpenBy.innerText=issue.author;
+    modalOpenDate.innerText=new Date(issue.createdAt).toLocaleDateString();
+    
     modalLabels.innerHTML="";
     
     if (issue.priority === "medium") {
@@ -184,6 +196,35 @@ function buildLabel(label){
                         <p class="text-[#00A96E] text-[12px] font-medium">documentation</p>
                     </div>`
             }
+}
+
+
+searchBox.addEventListener("keyup",(event)=>{
+    const searchedText=event.target.value.trim();
+    (searchedText!=="") ?searchIssue(searchedText): loadIssues();
+    
+   
+})
+
+async function searchIssue(text){
+        showLoadingSpinner();
+     const res=await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`);
+     const data=await res.json();
+    //  console.log(data.data);
+    hideLoadingSpinner();
+   
+    displayIssues(data.data);
+    
+}
+
+
+function showLoadingSpinner(){
+    loadingSpinner.classList.remove("hidden");
+    issueCardSection.classList.add("hidden");
+}
+function hideLoadingSpinner(){
+    issueCardSection.classList.remove("hidden");
+    loadingSpinner.classList.add("hidden");
 }
 
 loadIssues();
