@@ -80,7 +80,7 @@ function displayIssues(issues) {
          labelHtml+=buildLabel(label);
         });
         let issueCard = document.createElement("div");
-        issueCard.classList.add("card", "w-full", "shadow-md", "bg-[#ffffff]", "rounded-lg", "border-t-4", `${issue.status === "open" ? "border-[#00A96E]" : "border-[#A855F7]"}`);
+        issueCard.classList.add("card","hover:cursor-pointer", "w-full", "shadow-md", "bg-[#ffffff]", "rounded-lg", "border-t-4", `${issue.status === "open" ? "border-[#00A96E]" : "border-[#A855F7]"}`);
         issueCard.innerHTML = `
              <div class="uppersection p-6 space-y-3">
                           
