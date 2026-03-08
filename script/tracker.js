@@ -13,6 +13,7 @@ const modalOpenBy=document.getElementById("modalOpenBy");
 const modalOpenDate=document.getElementById("modalOpenDate");
 const loadingSpinner=document.getElementById("loadingSpinner");
 const searchBox=document.getElementById("searchBox");
+const newIssueBtn=document.getElementById("newIssueBtn");
 const states = [allBtn, openBtn, closedBtn];
 let cState = allBtn;
 
@@ -199,11 +200,14 @@ function buildLabel(label){
 }
 
 
-searchBox.addEventListener("keyup",(event)=>{
-    const searchedText=event.target.value.trim();
+newIssueBtn.addEventListener("click",()=>{
+    const searchedText=searchBox.value.trim();
+    // console.log(searchedText);
     (searchedText!=="") ?searchIssue(searchedText): loadIssues();
-    
-   
+})
+searchBox.addEventListener("input",()=>{
+    const text=searchBox.value.trim();
+    if(text==="")loadIssues();
 })
 
 async function searchIssue(text){
@@ -216,7 +220,6 @@ async function searchIssue(text){
     displayIssues(data.data);
     
 }
-
 
 function showLoadingSpinner(){
     loadingSpinner.classList.remove("hidden");
