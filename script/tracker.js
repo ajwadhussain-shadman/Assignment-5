@@ -184,16 +184,16 @@ function buildLabel(label){
             }
             else if (label === "good first issue") {
                 return `<div
-                        class="label-3 flex  items-center bg-[#DEFCE8] border border-[#BBF7D0] rounded-[100px] w-32 justify-center gap-0.5">
-                        <img src="./assets/Sparkle.png" alt="" class="">
-                        <p class="text-[#00A96E] text-[12px] font-medium">good first issue</p>
+                        class="label-3 bg-[#DEFCE8] border border-[#BBF7D0] rounded-[100px] w-32  gap-0.5">
+                        
+                        <p class="text-[#00A96E] text-[12px] font-medium flex gap-2 items-center justify-center"><i class="fa-solid fa-triangle-exclamation"></i>good first issue</p>
                     </div>`
             }
             else if (label === "documentation") {
-                return `<div
-                        class="label-3 flex  items-center bg-[#DEFCE8] border border-[#BBF7D0] rounded-[100px] w-28 justify-center gap-0.5">
-                        <img src="./assets/Sparkle.png" alt="" class="">
-                        <p class="text-[#00A96E] text-[12px] font-medium">documentation</p>
+                return  `<div
+                        class="label-3 bg-[#DEFCE8] border border-[#BBF7D0] rounded-[100px] w-32  gap-0.5">
+                        
+                        <p class="text-[#00A96E] text-[12px] font-medium flex gap-2 items-center justify-center"><i class="fa-regular fa-file-lines"></i>documentation</p>
                     </div>`
             }
 }
