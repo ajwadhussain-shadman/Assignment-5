@@ -10,6 +10,7 @@ const modalPriority = document.getElementById("modalPriority");
 let issueNumber = document.getElementById("issueNumber");
 const issueModal=document.getElementById("issueModal");
 const modalOpenBy=document.getElementById("modalOpenBy");
+const modalStatus=document.getElementById("modalStatus");
 const modalOpenDate=document.getElementById("modalOpenDate");
 const loadingSpinner=document.getElementById("loadingSpinner");
 const searchBox=document.getElementById("searchBox");
@@ -129,11 +130,22 @@ async function showIssueModal(id) {
     // console.log(data);
     const issue=data.data;
     hideLoadingSpinner();
+    if(issue.status==="open"){
+        modalStatus.innerText="Opened";
+        modalStatus.classList.remove("bg-[#4A00FF]");
+        modalStatus.classList.add("bg-[#00A96E]");
+        modalOpenBy.innerText="Opened by "+issue.author ;
+    }
+    else{
+        modalStatus.innerText="Closed";
+        modalStatus.classList.remove("bg-[#00A96E]");
+        modalStatus.classList.add("bg-[#4A00FF]");
+        modalOpenBy.innerText="Closed by "+issue.author;
+    }
     modalTitle.innerText=issue.title;
     modalDescription.innerText=issue.description;
     modalAssignee.innerText=(issue.assignee!=="") ?issue.assignee:"not found";
-    modalPriority.innerText=issue.priority;
-    modalOpenBy.innerText=issue.author;
+    modalPriority.innerText=issue.priority; 
     modalOpenDate.innerText=new Date(issue.createdAt).toLocaleDateString("en-US");
     
     modalLabels.innerHTML="";
