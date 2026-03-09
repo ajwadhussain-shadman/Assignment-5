@@ -109,7 +109,7 @@ function displayIssues(issues) {
                 
                 <div class="border-t p-4 text-[#64748B] border-[#E4E4E7]">
                     <p>#${issue.id} by ${issue.author}</p>
-                    <p>${new Date(issue.createdAt).toLocaleDateString()}</p>
+                    <p>${new Date(issue.createdAt).toLocaleDateString("en-US")}</p>
                 </div>
         
         `
@@ -134,7 +134,7 @@ async function showIssueModal(id) {
     modalAssignee.innerText=(issue.assignee!=="") ?issue.assignee:"not found";
     modalPriority.innerText=issue.priority;
     modalOpenBy.innerText=issue.author;
-    modalOpenDate.innerText=new Date(issue.createdAt).toLocaleDateString();
+    modalOpenDate.innerText=new Date(issue.createdAt).toLocaleDateString("en-US");
     
     modalLabels.innerHTML="";
     
