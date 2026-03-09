@@ -83,7 +83,7 @@ function displayIssues(issues) {
         let issueCard = document.createElement("div");
         issueCard.classList.add("card","hover:cursor-pointer", "w-full", "shadow-md", "bg-[#ffffff]", "rounded-lg", "border-t-4", `${issue.status === "open" ? "border-[#00A96E]" : "border-[#A855F7]"}`);
         issueCard.innerHTML = `
-             <div class="uppersection p-6 space-y-3">
+             <div class="uppersection p-4 space-y-3">
                           
                 <div class= "card-top flex justify-between">
                     <!-- left icon -->
