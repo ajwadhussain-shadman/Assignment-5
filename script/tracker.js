@@ -165,7 +165,7 @@ function buildLabel(label){
               <div
                         class="label-1 flex  items-center bg-[#FEECEC] border border-[#FECACA] rounded-[100px]  px-1 justify-center gap-0.5">
                         <img src="./assets/BugDroid.png" alt="" class="">
-                        <p class="text-[#EF4444] text-[12px] font-medium">Bug</p>
+                        <p class="text-[#EF4444] text-[12px] font-medium">BUG</p>
                     </div>
              `
             }
@@ -180,21 +180,21 @@ function buildLabel(label){
                 return`<div
                         class="label-3 flex  items-center bg-[#DEFCE8] border border-[#BBF7D0] rounded-[100px] px-1 justify-center gap-0.5">
                         <img src="./assets/Sparkle.png" alt="" class="">
-                        <p class="text-[#00A96E] text-[12px] font-medium">Enhancement</p>
+                        <p class="text-[#00A96E] text-[12px] font-medium">ENHANCEMENT</p>
                     </div>`
             }
             else if (label === "good first issue") {
                 return `<div
                         class="label-3 bg-[#DEFCE8] border border-[#BBF7D0] rounded-[100px] px-1 gap-0.5 ">
                         
-                        <p class="text-[#00A96E] text-[12px] font-medium flex gap-2 items-center justify-center"><i class="fa-solid fa-triangle-exclamation"></i>good first issue</p>
+                        <p class="text-[#00A96E] text-[12px] font-medium flex gap-2 items-center justify-center"><i class="fa-solid fa-triangle-exclamation"></i>GOOD FIRST ISSUE</p>
                     </div>`
             }
             else if (label === "documentation") {
                 return  `<div
                         class="label-3 bg-[#DEFCE8] border border-[#BBF7D0] rounded-[100px] px-1  gap-0.5">
                         
-                        <p class="text-[#00A96E] text-[12px] font-medium flex gap-2 items-center justify-center"><i class="fa-regular fa-file-lines"></i>documentation</p>
+                        <p class="text-[#00A96E] text-[12px] font-medium flex gap-2 items-center justify-center"><i class="fa-regular fa-file-lines"></i>DOCUMENTATION</p>
                     </div>`
             }
 }
